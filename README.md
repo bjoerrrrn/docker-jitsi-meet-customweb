@@ -16,6 +16,6 @@ You can set them like in this **example**:
 - JITSI_WATERMARK_LINK=meet.strate.media
 
 The logo is fetched on container creation. So if you want to change the settings you have to recreate the container.
-Title and watermark are configured in interface_config.js - the file is persisted in a volume at default. You can change settings there live or 
+Title and watermark are configured in interface_config.js - the file is persisted in a volume at default. You can change settings there at runtime or wipe the file and let it recreate on container creation.
 
 I know- its a dirty hack and far from docker guidelines, but hey, take it or leave it. ;-)
