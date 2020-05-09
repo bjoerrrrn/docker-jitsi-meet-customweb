@@ -8,4 +8,6 @@ RUN apt-dpkg-wrap apt-get update && \
 	echo 'if [ -z ${WEB_WATERMARK_HEIGHT+x} ]; then echo ""; else sed -i "s/height:74px;/height:$WEB_WATERMARK_HEIGHT;/g" /usr/share/jitsi-meet/css/all.css; fi' >> /etc/cont-init.d/10-config && \
 	echo 'if [ -z ${WEB_WATERMARK_WIDTH+x} ]; then echo ""; else sed -i "s/width:186px;/width:$WEB_WATERMARK_WIDTH;/g" /usr/share/jitsi-meet/css/all.css; fi' >> /etc/cont-init.d/10-config && \
 	echo 'if [ -z ${WEB_TITLE+x} ]; then echo ""; else sed -i "s/Jitsi Meet/$WEB_TITLE/g" /usr/share/jitsi-meet/title.html; fi' >> /etc/cont-init.d/10-config && \
-	echo 'if [ -z ${WEB_TITLE+x} ]; then echo ""; else sed -i "s/Jitsi Meet/$WEB_TITLE/g" /config/interface_config.js; fi' >> /etc/cont-init.d/10-config
+	echo 'if [ -z ${WEB_TITLE+x} ]; then echo ""; else sed -i "s/Jitsi Meet/$WEB_TITLE/g" /config/interface_config.js; fi' >> /etc/cont-init.d/10-config && \
+	echo 'if [ -z ${JITSI_WATERMARK_LINK+x} ]; then echo ""; else sed -i "s/jitsi.org/$JITSI_WATERMARK_LINK/g" /config/interface_config.js; fi' >> /etc/cont-init.d/10-config
+	
