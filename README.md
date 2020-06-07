@@ -20,4 +20,6 @@ You can set them like in this **example**:
 The logo is fetched on container creation. So if you want to change the settings you have to recreate the container.
 Title and watermark are configured in interface_config.js - the file is persisted in a volume at default. You can change settings there at runtime or wipe the file and let it recreate on container creation.
 
+A few performance options are hardcoded in Dockerfile like Resolution 480p, channelLastN: 4, enableLayerSuspension: true and disableAudioLevels: true.
+
 I know- its a dirty hack and far from docker guidelines, but hey, take it or leave it. ;-)
