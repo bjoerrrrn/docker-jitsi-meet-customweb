@@ -2,7 +2,7 @@ FROM jitsi/web:latest
 LABEL maintainer "bjoern <bjoern@strate.media>"
 
 RUN apt-dpkg-wrap apt-get update && \
-	apt-dpkg-wrap apt-get install -y curl && \
+	apt-dpkg-wrap apt-get install -y curl nano && \
 	apt-cleanup && \
 	echo 'if [ -z ${WEB_WATERMARK_IMAGE+x} ]; then echo ""; else rm -f /usr/share/jitsi-meet/images/watermark.png && curl $WEB_WATERMARK_IMAGE --output /usr/share/jitsi-meet/images/watermark.png; fi' >> /etc/cont-init.d/10-config && \
 	echo 'if [ -z ${WEB_WATERMARK_HEIGHT+x} ]; then echo ""; else sed -i "s/height:74px;/height:$WEB_WATERMARK_HEIGHT;/g" /usr/share/jitsi-meet/css/all.css; fi' >> /etc/cont-init.d/10-config && \
